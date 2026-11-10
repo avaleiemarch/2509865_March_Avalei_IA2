@@ -1,0 +1,687 @@
+/* =====================================
+   1. ROOT VARIABLES AND GLOBAL STYLES
+===================================== */
+
+:root {
+    --neutral-0: hsl(0, 0%, 100%);
+    --neutral-300: hsl(252, 6%, 83%);
+    --neutral-500: hsl(245, 15%, 58%);
+    --neutral-700: hsl(245, 19%, 35%);
+    --neutral-900: hsl(248, 70%, 10%);
+
+    --orange-500: hsl(7, 88%, 67%);
+    --orange-700: hsl(7, 71%, 60%);
+
+    --font-main: "Inconsolata", monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+
+    font-family: var(--font-main);
+    color: var(--neutral-0);
+
+    background-color: var(--neutral-900);
+    background-image: url("../assets/images/background-desktop.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+:where(.hero-description, .registration-description, .ticket-description) {
+    color: var(--neutral-300);
+    line-height: 1.6;
+}
+
+/* =====================================
+   2. DECORATIVE BACKGROUND PATTERN
+===================================== */
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 100px;
+    right: 0;
+
+    width: 230px;
+    height: 180px;
+
+    background-image: url("../assets/images/pattern-squiggly-line-top.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.site-header,
+main,
+.site-footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* =====================================
+   3. NAVIGATION BAR
+===================================== */
+
+.site-header {
+    width: 100%;
+    padding: 25px 6%;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo img {
+    display: block;
+    width: 190px;
+    height: auto;
+}
+
+.nav-links a {
+    color: var(--neutral-300);
+    font-size: 18px;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--orange-500);
+}
+
+/* =====================================
+   4. LANDING PAGE HERO SECTION
+===================================== */
+
+.hero {
+    max-width: 850px;
+    margin: 90px auto 70px;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
+
+    background: linear-gradient(
+        90deg,
+        var(--orange-500),
+        var(--neutral-0)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 650px;
+    margin: 0 auto 35px;
+
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.6;
+}
+
+/* =====================================
+   5. EVENT DETAILS
+===================================== */
+
+.event-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin: 30px auto;
+}
+
+.event-details p {
+    min-width: 220px;
+    padding: 18px 25px;
+
+    color: var(--neutral-300);
+    font-size: 18px;
+
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--neutral-700);
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.event-details strong {
+    color: var(--orange-500);
+}
+
+.event-details p:hover {
+    transform: translateY(-4px);
+    border-color: var(--orange-500);
+}
+
+/* =====================================
+   6. REGISTRATION BUTTON
+===================================== */
+
+.register-btn {
+    display: inline-block;
+
+    padding: 16px 45px;
+
+    color: var(--neutral-900);
+    background-color: var(--orange-500);
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(248, 120, 105, 0.2);
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: var(--orange-700);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(248, 120, 105, 0.4);
+}
+
+/* =====================================
+   7. REGISTRATION PAGE
+===================================== */
+
+.registration {
+    width: 90%;
+    max-width: 600px;
+
+    margin: 45px auto;
+    padding: 20px;
+}
+
+.registration h1 {
+    max-width: 750px;
+    margin: 0 auto 20px;
+
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+
+    background: linear-gradient(
+        90deg,
+        var(--orange-500),
+        var(--neutral-0)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.registration-description {
+    margin-bottom: 35px;
+
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Registration form layout */
+
+#registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    color: var(--neutral-0);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Text and email inputs */
+
+.form-group input:not([type="file"]) {
+    width: 100%;
+    padding: 15px;
+
+    color: var(--neutral-0);
+    background-color: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid var(--neutral-500);
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.form-group input::placeholder {
+    color: var(--neutral-300);
+}
+
+.form-group input:focus-visible {
+    outline: 2px solid var(--orange-500);
+    outline-offset: 3px;
+}
+
+/* Avatar upload area */
+
+.upload-area {
+    padding: 25px 15px;
+
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.06);
+
+    border: 2px dashed var(--neutral-500);
+    border-radius: 12px;
+
+    transition: border-color 0.3s ease;
+}
+
+.upload-area:hover {
+    border-color: var(--orange-500);
+}
+
+.upload-icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+
+    margin: 0 auto 12px;
+}
+
+.upload-area p {
+    margin-top: 12px;
+    color: var(--neutral-300);
+}
+
+/* File input */
+
+.form-group input[type="file"] {
+    max-width: 100%;
+    color: var(--neutral-300);
+    font-family: inherit;
+}
+
+/* Validation error messages */
+
+.error-message {
+    min-height: 18px;
+
+    color: var(--orange-500);
+    font-size: 14px;
+}
+
+/* Highlight a field when an error is displayed */
+
+.form-group:has(.error-message:not(:empty)) input {
+    border-color: var(--orange-500);
+}
+
+/* Registration button */
+
+#registration-form .register-btn {
+    width: 100%;
+}
+
+#registration-form .register-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   8. TICKET CONFIRMATION PAGE
+===================================== */
+
+.ticket-section {
+    width: 90%;
+    max-width: 850px;
+
+    margin: 55px auto;
+    text-align: center;
+}
+
+.ticket-section h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+
+    background: linear-gradient(
+        90deg,
+        var(--orange-500),
+        var(--neutral-0)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.ticket-description {
+    margin-bottom: 40px;
+
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Ticket glassmorphism container */
+
+.ticket-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 30px;
+
+    text-align: left;
+
+    background-color: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 18px;
+
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-logo {
+    width: 190px;
+    height: auto;
+}
+
+.ticket-event-details {
+    margin: 15px 0 30px;
+    color: var(--neutral-300);
+}
+
+/* Attendee details */
+
+.attendee-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ticket-avatar {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.attendee-details h2 {
+    margin-bottom: 8px;
+
+    color: var(--neutral-0);
+    font-size: 22px;
+}
+
+#ticket-github {
+    color: var(--neutral-300);
+}
+
+.github-icon {
+    float: left;
+    width: 18px;
+    margin: 3px 8px 0 0;
+}
+
+/* Ticket serial number */
+
+.ticket-number {
+    padding-left: 20px;
+
+    color: var(--neutral-300);
+    font-size: 22px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ticket-note {
+    margin: 25px 0;
+    color: var(--neutral-300);
+}
+
+.ticket-home-link {
+    display: inline-block;
+}
+
+/* =====================================
+   9. FOOTER
+===================================== */
+
+.site-footer {
+    padding: 25px 15px;
+
+    color: var(--neutral-500);
+    font-size: 15px;
+    text-align: center;
+}
+
+/* =====================================
+   10. TABLET RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 1024px) {
+
+    body {
+        background-image: url("../assets/images/background-tablet.png");
+    }
+
+    .hero {
+        margin-top: 65px;
+    }
+
+}
+
+/* =====================================
+   11. MOBILE RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        background-image: url("../assets/images/background-mobile.png");
+    }
+
+    .site-header {
+        padding: 20px 18px;
+    }
+
+    .logo img {
+        width: 165px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    /* Landing page */
+
+    .hero {
+        margin: 35px auto;
+        padding: 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 8vw, 2.7rem);
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .event-details {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .event-details p {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .register-btn {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    /* Registration page */
+
+    .registration {
+        width: 100%;
+        margin: 25px auto;
+        padding: 18px;
+    }
+
+    .registration h1 {
+        font-size: 2rem;
+    }
+
+    .registration-description {
+        font-size: 16px;
+    }
+
+    /* Ticket page */
+
+    .ticket-section {
+        margin: 30px auto;
+    }
+
+    .ticket-card {
+        padding: 20px;
+        gap: 12px;
+    }
+
+    .ticket-logo {
+        width: 150px;
+    }
+
+    .ticket-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .attendee-details h2 {
+        font-size: 17px;
+    }
+
+    .ticket-number {
+        padding-left: 10px;
+        font-size: 16px;
+    }
+
+}
+
+/* =====================================
+   12. VERY SMALL MOBILE SCREENS
+===================================== */
+
+@media (max-width: 360px) {
+
+    .site-header {
+        padding: 20px 12px;
+    }
+
+    .logo img {
+        width: 145px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .registration h1 {
+        font-size: 1.8rem;
+    }
+
+    .ticket-card {
+        padding: 14px;
+    }
+
+}
+
+/* =====================================
+   13. ACCESSIBILITY: KEYBOARD FOCUS
+===================================== */
+
+:is(.nav-links a, .register-btn):focus-visible {
+    outline: 3px solid var(--neutral-0);
+    outline-offset: 5px;
+}
+
+/* =====================================
+   14. REDUCED MOTION ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+}

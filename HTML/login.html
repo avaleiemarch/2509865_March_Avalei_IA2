@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Coding Conf | Register</title>
+        <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png">
+        <link rel="stylesheet" href="../css/style.css">
+
+        <script src="../js/validation.js" defer></script>
+    </head>
+
+    <body>
+        <header class="site-header">
+            <nav class="navBar" aria-label="Main navigation">
+                <a href="index.html" class="logo">
+                    <img src="../assets/images/logo-full.svg" alt="Coding Conf logo">
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html"></a>Home</li>
+                    <li><a href="login.html" class="active">Register</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="registration">
+                <h1>Your Journey to Coding Conf 2026 Starts Here!</h1>
+
+                <p class="registration-description">
+                    Register below to receive your conference ticket.
+                </p>
+
+                <form id="registration-form" novalidate>
+
+                    <div class="form-group">
+                        <label for="avatar">Upload your photo</label>
+
+                        <div class="upload-area">
+                            <img src="../assets/images/icon-upload.svg"
+                            alt=""
+                            class="upload-icon">
+
+                            <input
+                                type="file"
+                                id="avatar"
+                                name="avatar"
+                                accept="image/png, image/jpeg"
+                            >
+
+                            <p>Upload your photo (JPG or PNG, under 500KB)</p>
+                        </div>
+
+                        <small class="error-message" id="avatar-error"
+                            aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                        >
+
+                        <small class="error-message" id="name-error"
+                            aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@email.com"
+                        >
+
+                        <small class="error-message" id="email-error"
+                            aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="github">GitHub Username</label>
+
+                        <input
+                            type="text"
+                            id="github"
+                            name="github"
+                            placeholder="@yourusername"
+                        >
+
+                        <small class="error-message" id="github-error"
+                        aria-live="polite"></small>
+                    </div>
+
+                    <button type="submit" class="register-btn">
+                        Generate My Ticket
+                    </button>
+                </form>
+            </section>
+        </main>
+        
+        <footer class="site-footer">
+            <p>Designed and built by Avalei March</p>
+        </footer>
+    </body>
+    
+</html>
